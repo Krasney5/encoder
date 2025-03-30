@@ -9,7 +9,18 @@ public class KeyGenerator {
                                             "ш", "щ", "з", "х", "ф", "ы", "в",
                                             "а", "п", "р", "о", "л", "д", "ж",
                                             "э", "я", "ч", "с", "м", "и", "т",
-                                            "ь", "б", "ю", "ъ", "ё"};
+                                            "ь", "б", "ю", "ъ", "ё", ",", ".", 
+                                            "'", };
+    
+    private String[] symbols = {"Q", "q", "W", "w", "e", "E", "R",
+                                "r", "T", "t", "Y", "y", "U", "u",
+                                "a", "p", "P", "o", "O", "i", "I",
+                                "s", "d", "f", "g", "h", "j", "k", 
+                                "v", "b", "n", "m", "'", ";", "l", 
+                                "c", "z", "Z", "X", "C", "V", "B", 
+                                "x", "H", "J", "K", "L", "M", "N",
+                                "A", "S", "D", "F", "G",  };
+                            
 
     private File keyFileDir = new File(PATH);
     private File keyFile = new File(PATH +"/Key.txt");
