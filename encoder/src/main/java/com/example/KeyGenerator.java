@@ -2,6 +2,8 @@ package com.example;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Random;
 
 public class KeyGenerator {
     private static final String PATH = "encoder/src/main/java/com/example/KeyFile";
@@ -10,17 +12,19 @@ public class KeyGenerator {
                                             "а", "п", "р", "о", "л", "д", "ж",
                                             "э", "я", "ч", "с", "м", "и", "т",
                                             "ь", "б", "ю", "ъ", "ё", ",", ".", 
-                                            "'", };
+                                            "'",  " "};
     
     private String[] symbols = {"Q", "q", "W", "w", "e", "E", "R",
                                 "r", "T", "t", "Y", "y", "U", "u",
                                 "a", "p", "P", "o", "O", "i", "I",
                                 "s", "d", "f", "g", "h", "j", "k", 
-                                "v", "b", "n", "m", "'", ";", "l", 
+                                "v", "b", "n", "m", ";", "l",
                                 "c", "z", "Z", "X", "C", "V", "B", 
                                 "x", "H", "J", "K", "L", "M", "N",
                                 "A", "S", "D", "F", "G",  };
-                            
+
+    private String leter;
+    private Random rand = new Random();
 
     private File keyFileDir = new File(PATH);
     private File keyFile = new File(PATH +"/Key.txt");
@@ -40,9 +44,13 @@ public class KeyGenerator {
                         throw new RuntimeException(e);
                     }
             }
+            for (int i = 0; i < ruLetters.length; i++){
+                int randNumber = rand.nextInt(ruLetters.length);
 
+                leter = ruLetters[i] + " " + symbols[randNumber];
 
-
+                ruLetters[i] = null;
+            }
     }
     
 }
